@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ReactDOM from "react-dom";
 import React from 'react'
+import {UserInfo} from './userInfo.js'
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -27,13 +28,13 @@ const userName = prompt("Как Вас зовут?");
 const userAge = prompt("Сколько Вам лет?");
 function whereYouNeedToGoTomorrow() {
   if (userAge >= 2 && userAge <= 5) {
-    return <p>Завтра вам нужно идти в детский сад</p>;
+    return <p>Скорее всего, завтра вам нужно идти в детский сад</p>;
   } else if (userAge >= 6 && userAge <= 17) {
-    return <p>Завтра вам нужно идти в школу</p>;
+    return <p>Скорее всего, завтра вам нужно идти в школу</p>;
   } else if (userAge >= 18 && userAge <= 24) {
-    return <p>Завтра вам нужно идти в универ</p>;
+    return <p>Скорее всего, завтра вам нужно идти в универ</p>;
   } else if (userAge >= 24 && userAge <= 60) {
-    return <p>Завтра вам скорее всего нужно идти на работу</p>;
+    return <p>Скорее всего, завтра вам нужно идти на работу</p>;
   } else {
     return <p style={{ color: "red" }}>Произошла ошибка</p>;
   }
@@ -45,7 +46,14 @@ ReactDOM.render(
       Hi there. My name is {userName} and i'm {userAge} y.o.
     </h2>
 
-    {whereYouNeedToGoTomorrow()}
+    {whereYouNeedToGoTomorrow()},
+
+    <br/>
+    <h3>Задание со UserInfo</h3>
+
+    <UserInfo userName={'Вова'} userGender={'муж'} userAge={27} yearsWorked={1} salery/>
+    <UserInfo userName={'Иван'} userGender={'муж'} userAge={21} yearsWorked={2} salery/>
+    <UserInfo userName={'Ольга'} userGender={'жен'} userAge={37} yearsWorked={3} salery/>
   </div>,
   document.querySelector('#app')
 );
